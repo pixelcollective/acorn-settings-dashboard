@@ -1,0 +1,34 @@
+{
+  "name": "tiny-pixel/acorn-settings-dashboard",
+  "type": "package",
+  "license": "MIT",
+  "description": "WordPress dashboard management for Acorn",
+  "authors": [
+    {
+      "name": "Kelly Mears",
+      "email": "kelly@tinypixel.dev"
+    }
+  ],
+  "keywords": [
+    "wordpress",
+    "acorn",
+    "sage",
+    "dashboard"
+  ],
+  "support": {
+    "issues": "https://github.com/pixelcollective/acorn-settings-dashboard/issues"
+  },
+  "autoload": {
+    "psr-4": {
+      "TinyPixel\\Settings\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.3"
+  },
+  "extra": {
+    "acorn": {
+      "providers": ["TinyPixel\\Settings\\Providers\\DashboardServiceProvider"]
+    }
+  }
+}
