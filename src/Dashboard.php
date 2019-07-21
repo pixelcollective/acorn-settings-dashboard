@@ -34,9 +34,7 @@ class Dashboard
 
         $this->columnsCount = $this->settings->get('columns_count');
 
-        $this->metaBoxSettings = Collection::make(
-            $this->settings->get('meta_boxes')
-        );
+        $this->metaBoxSettings = Collection::make($this->settings->get('meta_boxes'));
 
         add_action('wp_dashboard_setup', [$this, 'disableDashboardWidgets'], 999);
         add_action('admin_head-index.php', [$this, 'setDashboardColumns']);

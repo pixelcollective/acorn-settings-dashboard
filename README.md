@@ -1,6 +1,6 @@
-# Acorn Roles
+# Acorn Settings -- Dashboard
 
-Provides Acorn projects with configuration options for cached WordPress role and capability management.
+Provides Acorn projects with configuration options for the WordPress dashboard.
 
 ## Requirements
 
@@ -15,7 +15,7 @@ Provides Acorn projects with configuration options for cached WordPress role and
 Install via composer:
 
 ```bash
-composer require tiny-pixel/acorn-settings-roles
+composer require tiny-pixel/acorn-settings-dashboard
 ```
 
 After installation run the following command to publish the starter configuration file to your application:
@@ -26,7 +26,7 @@ wp acorn vendor:publish
 
 ## Regenerating cache
 
-Roles are cached with no expiration. If you make changes to your configuration you will need to regenerate the cache in order for them to take effect.
+Dashboard settings are cached with no expiration. If you make changes to your configuration you will need to regenerate the cache in order for them to take effect.
 
 Run the following command to regenerate the cache:
 
@@ -34,4 +34,8 @@ Run the following command to regenerate the cache:
 wp acorn optimize:clear
 ```
 
-Happy permissions'ing!
+Happy dashboard'ing!
+
+## Acknowledgements
+
+Code to manage the columns count comes from the [Sober\Intervention](https://github.com/soberwp/intervention) Dashboard module. ❤
