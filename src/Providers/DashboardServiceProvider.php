@@ -40,11 +40,9 @@ class DashboardServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $dashboardConfig = __DIR__ . '/../config/wordpress/dashboard.php';
+        $config = __DIR__ . '/../config/wordpress/dashboard.php';
 
-        $this->publishes([
-            $dashboardConfig => config_path('wordpress/dashboard.php'),
-        ]);
+        $this->publishes([$config => config_path('wordpress/dashboard.php')]);
 
         $this->app->make('wordpress.dashboard')->init(Collection::make(
             $this->app['config']->get('wordpress.dashboard')
