@@ -1,6 +1,28 @@
 <?php
 
 return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | Dashboard Columns
+    |--------------------------------------------------------------------------
+    |
+    | Set the number of columns to be displayed on the dashboard
+    |
+    */
+
+    'columns_count' => 1,
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Dashboard Metaboxes
+    |--------------------------------------------------------------------------
+    |
+    | Filter the metaboxes enabled on the dashboard
+    |
+    */
+
     'meta_boxes' => [
         'activity'        => false,
         'at_a_glance'     => true,
@@ -12,4 +34,5 @@ return [
         'quick_press'     => true,
         'recent_drafts'   => true,
     ],
+
 ];
