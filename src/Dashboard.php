@@ -4,7 +4,6 @@ namespace TinyPixel\Settings;
 
 // Illuminate framework
 use \Illuminate\Support\Collection;
-use \Illuminate\Support\Facades\Cache;
 
 // Roots
 use \Roots\Acorn\Application;
@@ -25,7 +24,7 @@ class Dashboard
 
     public function __construct(Application $app)
     {
-        $this->app = $app;
+        self::$cache = $app['cache']->store('default');
     }
 
     public function init(Collection $config)
@@ -65,7 +64,7 @@ class Dashboard
      */
     public function disableDashboardWidgets()
     {
-        Cache::rememberForever('dashboard-widgets', function () {
+        self::$cache->rememberForever('dashboard-widgets', function () {
             $this->metaBoxSettings->each(function ($status, $metabox) {
                 if ($status == false) {
                     global $wp_meta_boxes;
@@ -90,7 +89,7 @@ class Dashboard
      */
     public function setDashboardColumns()
     {
-        Cache::rememberForever('dashboard-columns', function () {
+        self::$cache->rememberForever('dashboard-columns', function () {
             if (isset($this->columnsCount) && $this->columnsCount !== 0) {
                 $width = 100 / $this->columnsCount;
             }

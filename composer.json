@@ -1,7 +1,8 @@
 {
-  "name": "tiny-pixel/acorn-settings-dashboard",
+  "name": "tiny-pixel/acorn-settings-dashboard-module",
   "type": "package",
   "license": "MIT",
+  "version": "0.0.9",
   "description": "WordPress dashboard management for Acorn",
   "authors": [
     {
