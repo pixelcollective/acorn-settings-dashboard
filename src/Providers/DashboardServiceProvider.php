@@ -37,7 +37,6 @@ class DashboardServiceProvider extends ServiceProvider
         $config = __DIR__ . '/../config/wordpress/dashboard.php';
 
         $this->publishes([$config => config_path('wordpress/dashboard.php')]);
-        $this->mergeConfigFrom($source, 'cache');
 
         $this->app->make('wordpress.dashboard')->init(Collection::make(
             $this->app['config']->get('wordpress.dashboard')

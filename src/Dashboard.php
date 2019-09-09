@@ -25,7 +25,7 @@ class Dashboard
 
     public function __construct(Application $app)
     {
-        self::$cache = $app['cache']->store('default');
+        self::$cache = $app['cache'];
     }
 
     public function init(Collection $config)
