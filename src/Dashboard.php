@@ -1,14 +1,8 @@
 <?php
-
 namespace TinyPixel\Settings;
 
-// Illuminate framework
 use \Illuminate\Support\Collection;
-
-// Roots
 use \Roots\Acorn\Application;
-
-// Internal
 use \TinyPixel\Settings\Traits;
 
 /**
@@ -21,6 +15,13 @@ use \TinyPixel\Settings\Traits;
 class Dashboard
 {
     use Traits\DashboardMetaBoxes;
+
+    /**
+     * Cache
+     *
+     * @var \Illuminate\Cache\CacheManager
+     */
+    public static $cache;
 
     public function __construct(Application $app)
     {
@@ -70,6 +71,7 @@ class Dashboard
                     global $wp_meta_boxes;
 
                     $location = $this->metaBoxes[$metabox]['location'];
+
                     $name = $this->metaBoxes[$metabox]['name'];
 
                     if (isset($wp_meta_boxes['dashboard'][$location]['core'][$name])) {

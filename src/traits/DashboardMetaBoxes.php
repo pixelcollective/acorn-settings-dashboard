@@ -1,5 +1,4 @@
 <?php
-
 namespace TinyPixel\Settings\Traits;
 
 trait DashboardMetaBoxes
